@@ -1,92 +1,582 @@
-<!doctype html>
-<html lang="tl">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy Policy</title>
-  <style>
-    :root{--bg:#f7f8fb;--card:#ffffff;--muted:#6b7280;--accent:#2563eb}
-    body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:#111;margin:0;padding:24px}
-    .container{max-width:900px;margin:0 auto}
-    header{background:linear-gradient(90deg,#eef2ff,transparent);padding:28px;border-radius:12px}
-    h1{margin:0;font-size:1.6rem}
-    p.lead{color:var(--muted);margin-top:6px}
-    .card{background:var(--card);padding:22px;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,42,0.06);margin-top:18px}
-    h2{margin-top:18px}
-    ul{margin:8px 0 16px 1.2rem}
-    code{background:#f3f4f6;padding:2px 6px;border-radius:6px;font-family:monospace}
-    .meta{font-size:0.95rem;color:var(--muted)}
-    footer{margin-top:18px;font-size:0.9rem;color:var(--muted)}
-  </style>
+<link rel="manifest" href="manifest.json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NASH Principal Exam Reviewer</title>
+
+<style>
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#f5f9ff,#eefbf5);
+    margin:0;
+    padding:0;
+    color:#2c3e50;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#6d9eea,#7ec9b2);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+header h1{
+    margin:0;
+    font-size:34px;
+    letter-spacing:0.5px;
+}
+
+.subtext{
+    margin-top:10px;
+    font-size:16px;
+    opacity:0.95;
+}
+
+/* CONTAINER */
+.container{
+    width:92%;
+    max-width:1100px;
+    margin:35px auto;
+}
+
+/* SECTION */
+.section{
+    background:#ffffff;
+    padding:28px;
+    border-radius:24px;
+    margin-bottom:28px;
+    box-shadow:0 8px 22px rgba(0,0,0,0.05);
+    transition:0.3s ease;
+}
+
+.section:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 28px rgba(0,0,0,0.07);
+}
+
+.section h2{
+    margin-top:0;
+    margin-bottom:22px;
+    font-size:24px;
+    font-weight:700;
+}
+
+/* GROUP */
+.group{
+    margin-bottom:16px;
+}
+
+.group:last-child{
+    margin-bottom:0;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:12px;
+}
+
+/* LINKS */
+a{
+    text-decoration:none;
+    padding:14px;
+    border-radius:15px;
+    text-align:center;
+    font-weight:600;
+    transition:0.25s ease;
+    display:block;
+    box-shadow:0 3px 10px rgba(0,0,0,0.04);
+    border:1px solid rgba(255,255,255,0.4);
+}
+
+a:hover{
+    transform:translateY(-2px) scale(1.02);
+}
+
+/* ===== MOCK TESTS ===== */
+
+/* Mock HTML */
+.mock-html a{
+    background:linear-gradient(135deg,#dfeeff,#edf5ff);
+    color:#2d5caa;
+}
+
+.mock-html a:hover{
+    background:linear-gradient(135deg,#cfe4ff,#e1efff);
+}
+
+/* Mock Google Forms */
+.mock-gf a{
+    background:linear-gradient(135deg,#e7f7ff,#f1fbff);
+    color:#1d78a5;
+}
+
+.mock-gf a:hover{
+    background:linear-gradient(135deg,#d8f1ff,#e7f8ff);
+}
+
+/* ===== MAIN REVIEW ===== */
+
+/* Pre-Mock / Master / Final */
+.review-core a{
+    background:linear-gradient(135deg,#e7faf0,#f2fff8);
+    color:#2d7a5e;
+}
+
+.review-core a:hover{
+    background:linear-gradient(135deg,#d9f5e7,#ebfff4);
+}
+
+/* Filmore */
+.review-filmore a{
+    background:linear-gradient(135deg,#f0ecff,#faf8ff);
+    color:#6750b5;
+}
+
+.review-filmore a:hover{
+    background:linear-gradient(135deg,#e6ddff,#f5f1ff);
+}
+
+/* Orange Book */
+.review-orange a{
+    background:linear-gradient(135deg,#fff2df,#fff9f0);
+    color:#b86c00;
+}
+
+.review-orange a:hover{
+    background:linear-gradient(135deg,#ffe7c8,#fff3e0);
+}
+
+/* ===== INTENSIVE ===== */
+
+/* Marathon */
+.intense-marathon a{
+    background:linear-gradient(135deg,#e9f4ff,#f5faff);
+    color:#456bb0;
+}
+
+.intense-marathon a:hover{
+    background:linear-gradient(135deg,#dbeeff,#edf6ff);
+}
+
+/* Huling Pabaon */
+.intense-pabaon a{
+    background:linear-gradient(135deg,#fff0f6,#fff8fb);
+    color:#b35682;
+}
+
+.intense-pabaon a:hover{
+    background:linear-gradient(135deg,#ffe5f1,#fff1f7);
+}
+
+/* Last Minute */
+.intense-last a{
+    background:linear-gradient(135deg,#f5efff,#fcf9ff);
+    color:#7a56b4;
+}
+
+.intense-last a:hover{
+    background:linear-gradient(135deg,#ece1ff,#f8f2ff);
+}
+
+/* ===== PRACTICE ===== */
+
+/* Practice */
+.practice-row a{
+    background:linear-gradient(135deg,#fff5e7,#fffbf4);
+    color:#ba7600;
+}
+
+.practice-row a:hover{
+    background:linear-gradient(135deg,#ffeccd,#fff5e7);
+}
+
+/* Trail */
+.trail-row a{
+    background:linear-gradient(135deg,#eef8ff,#f7fcff);
+    color:#4680aa;
+}
+
+.trail-row a:hover{
+    background:linear-gradient(135deg,#dff2ff,#eef8ff);
+}
+
+/* ===== READING ===== */
+
+.reading-row a{
+    background:linear-gradient(135deg,#eefcf4,#f7fff9);
+    color:#2f8a67;
+}
+
+.reading-row a:hover{
+    background:linear-gradient(135deg,#ddf7e9,#effff5);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:28px;
+    font-size:14px;
+    color:#6b6b6b;
+    line-height:1.8;
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <h1>Privacy Policy</h1>
-      <p class="lead">Ang privacy policy na ito ay naglalarawan kung paano kinokolekta at ginagamit ng <strong>MathTibay</strong> ang impormasyon ng mga gumagamit.</p>
-      <p class="meta">Effective date: <strong>November 2025</strong></p>
-    </header>
 
-    <section class="card">
-      <h2>1. Pagbati at Saklaw</h2>
-      <p>Sa pamamagitan ng pag-access o paggamit ng aming serbisyo, pumapayag kang kolektahin, gamitin, at ibahagi ang impormasyon ayon sa polisiyang ito.</p>
+<header>
+    <h1>NASH Principal Exam Reviewer</h1>
+    <div class="subtext">Consistency today. Principal tomorrow. 🌟</div>
+</header>
 
-      <h2>2. Anong impormasyon ang aming kinokolekta?</h2>
-      <h3>a. Impormasyong ibinibigay mo</h3>
-      <p>Halimbawa: pangalan, email address, numero ng telepono, at iba pang impormasyon na kusang ipinapadala mo sa amin kapag nagrehistro o nakipag-ugnayan.</p>
-      <h3>b. Teknikal at paggamit</h3>
-      <p>Automatic naming kinokolekta: IP address, uri ng browser, operating system, mga page na binisita, oras ng pagbisita, at iba pang logs.</p>
-      <h3>c. Cookies at katulad na teknolohiya</h3>
-      <p>Gumagamit kami ng cookies at local storage para mapahusay ang functionality at analytics. Maaari mong i-configure ang iyong browser para tanggihan ang cookies, ngunit maaaring maapektuhan ang pag-andar ng serbisyo.</p>
+<div class="container">
 
-      <h2>3. Paano namin ginagamit ang impormasyon</h2>
-      <ul>
-        <li>Upang magbigay, mag-maintain, at mag-improve ng serbisyo.</li>
-        <li>Para sa komunikasyon tungkol sa account, update, at suporta.</li>
-        <li>Para sa seguridad at pag-iwas sa pandaraya.</li>
-        <li>Para sa analytics at pagpapabuti ng produkto.</li>
-      </ul>
+    <!-- MOCK TESTS -->
+    <div class="section">
+        <h2>⭐ Mock Tests</h2>
 
-      <h2>4. Pagbabahagi ng impormasyon</h2>
-      <p>Hindi namin ibebenta ang iyong personal na impormasyon sa third parties. Maaaring magbahagi kami ng impormasyon sa:</p>
-      <ul>
-        <li>Mga service provider (hal. hosting, analytics) na tumutulong sa amin na patakbuhin ang serbisyo.</li>
-        <li>Kapag kinakailangan ng batas o para sa proteksyon ng aming mga karapatan.</li>
-        <li>Sa mga kumpanya na aming sasanibin o iibenta (sa kondisyon na ang buyer ay susunod sa polisiyang ito o magbibigay ng kabaguhang privacy notice).</li>
-      </ul>
+        <div class="group mock-html">
+            <div class="grid">
+                <a href="NASH Mock Test 1.html">Mock Test 1</a>
+                <a href="NASH Mock Test 2.html">Mock Test 2</a>
+                <a href="NASH Mock Test 3.html">Mock Test 3</a>
+                <a href="NASH Gubatan Multiple Choice.html">Mock Test 4</a>
+            </div>
+        </div>
 
-      <h2>5. Seguridad</h2>
-      <p>Pinapangasiwaan namin ang impormasyon gamit ang angkop na teknikal at organisasyonal na hakbang upang protektahan ito. Gayunpaman, walang sistema ang ganap na ligtas; hindi namin maaaring ganap na tiyakin ang seguridad ng data na ipinapadala sa amin.</p>
+        <div class="group mock-gf">
+            <div class="grid">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSePEh0e69CeYb8nBseApSlDXTnQtcsN0GbNpgLiCOyPQDd8kg/viewform?pli=1&pli=1">Mock Test GF 1</a>
 
-      <h2>6. Pag-imbak at Pagpanatili</h2>
-      <p>Itinatago namin ang personal na impormasyon hangga't kinakailangan para sa layunin kung bakit ito kinolekta, at alinsunod sa mga legal na obligasyon.</p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScd7ULQu44pXkHLoxNyHAetaxhWexmpZvGAp17mOqO3vg2pdw/viewform">Mock Test GF 2</a>
 
-      <h2>7. Mga Karapatan ng Gumagamit</h2>
-      <p>Depende sa iyong hurisdiksyon, maaari kang may karapatang:</p>
-      <ul>
-        <li>Humiling ng access sa iyong data.</li>
-        <li>Humiling na itama o burahin ang iyong personal na impormasyon.</li>
-        <li>Humiling na limitahan o kontrahin ang pagproseso ng iyong data.</li>
-        <li>Mag-opt out ng ilang uri ng pagproseso o marketing.</li>
-      </ul>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc4KB2L8fVqjyyYfMeFL2PHYpYGF_Naec0_gDD9qRMWFeFPJA/viewform">Mock Test GF 3</a>
 
-      <h2>8. Mga Link sa Ibang Site</h2>
-      <p>Ang aming serbisyo ay maaaring maglaman ng link papunta sa third-party websites. Hindi kami responsable sa privacy practices ng mga ito.</p>
+                <a href="https://forms.office.com/r/d8tWDG2AXQ?origin=QRCode">Mock Test MS 4</a>
+            </div>
+        </div>
+    </div>
 
-      <h2>9. Privacy ng mga Bata</h2>
-      <p>Hindi sinasadya naming kolektahin ang personal na impormasyon mula sa mga batang wala pang 13 taong gulang. Kung malaman naming may naipadala na ganoong impormasyon, magtatangkang tanggalin namin ito agad. Kung ikaw ay magulang o guardian at alam mong may anak na bata ang nagbigay ng impormasyon, makipag-ugnayan sa amin.</p>
+    <!-- MAIN REVIEW -->
+    <div class="section">
+        <h2>📚 Main Review</h2>
 
-      <h2>10. Pagbabago sa Polisiyang ito</h2>
-      <p>Maaaring i-update ang policy na ito paminsan-minsan. Ipapakita namin ang "Effective date" sa itaas tuwing may pagbabago at/o magpapadala ng notisya kung kinakailangan.</p>
+        <div class="group review-core">
+            <div class="grid">
+                <a href="NASH Pre-Mock Test.html">Pre-Mock</a>
+                <a href="NASH Master Class.html">Master Class</a>
+                <a href="NASH Final Coaching.html">Final Coaching</a>
+            </div>
+        </div>
 
-      <h2>11. Makipag-ugnayan sa Amin</h2>
-      <p>Para sa mga tanong o kahilingan tungkol sa iyong privacy o sa policy na ito, makipag-ugnayan sa: <br><strong>[EMAIL@HALIMBAWA.com]</strong></p>
+        <div class="group review-filmore">
+            <div class="grid">
+                <a href="NASH Filmore 1.html">Filmore 1</a>
+                <a href="NASH Filmore 2.html">Filmore 2</a>
+                <a href="NASH Filmore 3.html">Filmore 3</a>
+            </div>
+        </div>
 
-      <footer>
-        <p>Pinaghanda para sa: <strong>MathTibay</strong> · Epektibo mula <strong>November 2025</strong></p>
-      </footer>
-    </section>
+        <div class="group review-orange">
+            <div class="grid">
+                <a href="NASH Orange Set A.html">Orange Book A</a>
+                <a href="NASH Orange Set B.html">Orange Book B</a>
+                <a href="NASH Orange Set C.html">Orange Book C</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTENSIVE REVIEW -->
+    <div class="section">
+        <h2>🔥 Intensive Review</h2>
+
+        <div class="group intense-marathon">
+            <div class="grid">
+                <a href="NASH Marathon 1.html">Marathon 1</a>
+                <a href="NASH Marathon 2.html">Marathon 2</a>
+                <a href="NASH Marathon 3.html">Marathon 3</a>
+                <a href="NASH Marathon 4.html">Marathon 4</a>
+            </div>
+        </div>
+
+        <div class="group intense-pabaon">
+            <div class="grid">
+                <a href="NASH Huling Pabaon 1.html">Huling Pabaon 1</a>
+                <a href="NASH Huling Pabaon 2.html">Huling Pabaon 2</a>
+                <a href="NASH Huling Pabaon 3.html">Huling Pabaon 3</a>
+                <a href="NASH Huling Pabaon 4.html">Huling Pabaon 4</a>
+            </div>
+        </div>
+
+        <div class="group intense-last">
+            <div class="grid">
+                <a href="NASH Last Minute Coaching 1.html">Last Minute 1</a>
+                <a href="NASH Last Minute Coaching 2.html">Last Minute 2</a>
+                <a href="NASH Last Minute Coaching 3.html">Last Minute 3</a>
+                <a href="NASH Last Minute Coaching 4.html">Last Minute 4</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRACTICE TESTS -->
+    <div class="section">
+        <h2>📝 Practice Tests</h2>
+
+        <div class="group practice-row">
+            <div class="grid">
+                <a href="NASH Practice Test 1.html">Practice Test 1</a>
+                <a href="NASH Orange Set B.html">Practice Test 2</a>
+                <a href="NASH Orange Set C.html">Practice Test 3</a>
+                <a href="NASH Orange Set C.html">Practice Test 4</a>
+                <a href="NASH Orange Set C.html">Practice Test 5</a>
+            </div>
+        </div>
+
+        <div class="group trail-row">
+            <div class="grid">
+                <a href="NASH Orange Set A.html">Trail NASH 1</a>
+                <a href="NASH Orange Set B.html">Trail NASH 2</a>
+                <a href="NASH Orange Set C.html">Trail NASH 3</a>
+                <a href="NASH Orange Set C.html">Trail NASH 4</a>
+                <a href="NASH Orange Set C.html">Trail NASH 5</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- READING MATERIALS -->
+    <div class="section">
+        <h2>📖 Reading Materials</h2>
+
+        <div class="group reading-row">
+            <div class="grid">
+                <a href="https://heyzine.com/flip-book/ea69376212.html">SIP & SRC</a>
+				<a href="Readings\DO_s2020_024_PPSSH.html">PPSH</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+
+
+
+
+
+
+
+
+</div>
+
+<!-- ✅ SCORE TRACKER -->
+<div class="section">
+  <h2>📊 My Score Tracker</h2>
+
+  <div style="margin-bottom:10px;">
+    <label>Activity:</label><br>
+    <select id="activity" style="padding:8px; border-radius:8px; width:100%;">
+      <option>Mock Test 1</option>
+      <option>Mock Test 2</option>
+      <option>Mock Test 3</option>
+      <option>Mock Test 4</option>
+
+      <option>Pre-Mock</option>
+      <option>Master Class</option>
+      <option>Final Coaching</option>
+
+      <option>Filmore 1</option>
+      <option>Filmore 2</option>
+      <option>Filmore 3</option>
+
+      <option>Orange Book A</option>
+      <option>Orange Book B</option>
+      <option>Orange Book C</option>
+
+      <option>Marathon 1</option>
+      <option>Marathon 2</option>
+      <option>Marathon 3</option>
+      <option>Marathon 4</option>
+
+      <option>Huling Pabaon 1</option>
+      <option>Huling Pabaon 2</option>
+      <option>Huling Pabaon 3</option>
+      <option>Huling Pabaon 4</option>
+
+      <option>Last Minute 1</option>
+      <option>Last Minute 2</option>
+      <option>Last Minute 3</option>
+      <option>Last Minute 4</option>
+
+      <option>Practice Test 1</option>
+      <option>Practice Test 2</option>
+      <option>Practice Test 3</option>
+      <option>Practice Test 4</option>
+      <option>Practice Test 5</option>
+
+      <option>Trail NASH 1</option>
+      <option>Trail NASH 2</option>
+      <option>Trail NASH 3</option>
+      <option>Trail NASH 4</option>
+      <option>Trail NASH 5</option>
+    </select>
   </div>
+
+  <div style="margin-bottom:10px;">
+    <label>Score (%):</label><br>
+    <input type="number" id="score" min="0" max="100"
+      style="padding:8px; border-radius:8px;">
+  </div>
+
+  <button onclick="saveScore()" style="
+    background:#6d9eea;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;">
+    Save Score
+  </button>
+
+  <button onclick="resetData()" style="
+    background:#e74c3c;
+    color:white;
+    padding:10px 15px;
+    border:none;
+    border-radius:10px;
+    margin-left:10px;
+    cursor:pointer;">
+    Reset All
+  </button>
+
+  <h3 style="margin-top:20px;">📋 Records</h3>
+
+  <table border="1" style="width:100%; border-collapse:collapse; margin-top:10px;">
+    <thead style="background:#f0f4ff;">
+      <tr>
+        <th style="padding:8px;">Activity</th>
+        <th style="padding:8px;">Attempts</th>
+        <th style="padding:8px;">Action</th>
+      </tr>
+    </thead>
+    <tbody id="scoreTable"></tbody>
+  </table>
+</div>
+
+<footer>
+ “Small daily improvements lead to stunning results.” ✨ 
+ <br>Future Principal in the making 💙
+</footer>
+
+<script>
+// ✅ SAFE LOAD (fix sa old data problem)
+let scores = JSON.parse(localStorage.getItem("scores")) || {};
+if (Array.isArray(scores)) {
+  scores = {};
+}
+
+// ✅ SAVE
+function saveScore() {
+  let activity = document.getElementById("activity").value;
+  let score = document.getElementById("score").value;
+
+  if (!activity || !score) {
+    alert("Please enter score.");
+    return;
+  }
+
+  if (!scores[activity]) {
+    scores[activity] = [];
+  }
+
+  scores[activity].push(Number(score));
+  localStorage.setItem("scores", JSON.stringify(scores));
+
+  displayScores();
+  document.getElementById("score").value = "";
+}
+
+// ✅ DISPLAY
+function displayScores() {
+  let table = document.getElementById("scoreTable");
+  table.innerHTML = "";
+
+  for (let activity in scores) {
+    let row = document.createElement("tr");
+
+    let attemptsHTML = "";
+    scores[activity].forEach((score, index) => {
+      let color = score >= 75 ? "green" : "red";
+
+      attemptsHTML += `
+        <span style="
+          margin-right:10px;
+          color:${color};
+          font-weight:bold;">
+          ${index + 1}: ${score}%
+        </span>
+      `;
+    });
+
+    row.innerHTML = `
+      <td style="padding:8px;"><b>${activity}</b></td>
+      <td style="padding:8px;">${attemptsHTML}</td>
+      <td style="text-align:center;">
+        <button onclick="deleteActivity('${activity}')" style="
+          background:#e74c3c;
+          color:white;
+          border:none;
+          padding:5px 10px;
+          border-radius:6px;
+          cursor:pointer;">
+          Clear
+        </button>
+      </td>
+    `;
+
+    table.appendChild(row);
+  }
+}
+
+// ✅ DELETE PER ACTIVITY
+function deleteActivity(activity) {
+  if (confirm("Clear all records for " + activity + "?")) {
+    delete scores[activity];
+    localStorage.setItem("scores", JSON.stringify(scores));
+    displayScores();
+  }
+}
+
+// ✅ RESET ALL
+function resetData() {
+  if (confirm("Clear ALL data?")) {
+    localStorage.removeItem("scores");
+    location.reload();
+  }
+}
+
+// ✅ LOAD
+displayScores();
+</script>
+
+
+
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./service-worker.js")
+    .then(() => console.log("Service Worker registered"))
+    .catch(err => console.log("SW failed", err));
+}
+</script>
+
+
+
+
 </body>
 </html>
-

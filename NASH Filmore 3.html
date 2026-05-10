@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+    <meta charset="UTF-8">
+    <title>NASH Filmore 3</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: auto;
+        }
+        /* Header & Timer Design */
+        #top-bar {
+            background: linear-gradient(135deg, #6C63FF, #4834d4);
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+        .timer-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: 2px solid #ff7979;
+        }
+        /* Iframe Container (Dito lalabas ang Lumi file mo) */
+        #content-frame {
+            flex-grow: 1;
+            border: none;
+            width: 100%;
+            height: 100%;
+        }
+        .motivation-text {
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div id="top-bar">
+    <div>
+        <h2 style="margin:0;">✨ NASH Filmore 3</h2>
+        <span class="motivation-text">Kaya mo 'yan! Focus lang sa 120 items. 🚀</span>
+    </div>
+    <div class="timer-box" id="timer">00:70:00</div>
+</div>
+
+<iframe src="NASH Filmore 3 iframe.html" id="content-frame"></iframe>
+
+<script>
+let time = 70 * 60; // 70 minutes
+const timerDisplay = document.getElementById('timer');
+const examFrame = document.getElementById('content-frame');
+
+const countdown = setInterval(() => {
+
+    let hours = Math.floor(time / 3600);
+    let mins = Math.floor((time % 3600) / 60);
+    let secs = time % 60;
+
+    timerDisplay.innerHTML =
+        (hours < 10 ? '0' : '') + hours + ":" +
+        (mins < 10 ? '0' : '') + mins + ":" +
+        (secs < 10 ? '0' : '') + secs;
+
+    if (time <= 0) {
+        clearInterval(countdown);
+
+        alert("⏰ Time is up! Hindi na maaaring sumagot.");
+
+        // i-disable ang exam
+        examFrame.style.pointerEvents = "none";
+        examFrame.style.opacity = "0.5";
+    }
+
+    time--;
+
+}, 1000);
+</script>
+
+</body>
+</html>
